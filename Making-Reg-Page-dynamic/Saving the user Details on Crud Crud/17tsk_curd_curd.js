@@ -102,11 +102,14 @@ function display(respons){
     }
 
     function editUser(userid){
-      axios.delete(`https://crudcrud.com/api/58b5335845cc43deb4b62b215b819b69/data${userid}`)
+      axios.delete(`https://crudcrud.com/api/58b5335845cc43deb4b62b215b819b69/data/${userid}`)
            .then((res)=>{
              ul.removeChild(li);
             document.getElementById("name").value = respons.name;
             document.getElementById("email").value = respons.email;
+           })
+           .catch((err)=>{
+            console.log(err);
            })
      
     }
